@@ -1,0 +1,9 @@
+web/VoteForm.class
+web/Singer.class
+web/SingerServlet.class
+web/VoteFormServlet.class
+web/ResultServlet.class
+web/GenereServlet.class
+web/MapTimeComparator.class
+web/MapValueComparator.class
+web/Genere.class
