@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="voting-form:war">
+    <output-path>$PROJECT_DIR$/voting-form/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>voting-form</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="voting-form-1.war">
+      <element id="artifact" artifact-name="voting-form:war exploded" />
+    </root>
+  </artifact>
+</component>
