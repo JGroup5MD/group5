@@ -4,11 +4,11 @@ import java.util.Objects;
 
 public class SingerDTO {
     private String SingerName;
-    private int ID;
+    private int IdSinger;
 
-    public SingerDTO(String singerName, int ID) {
+    public SingerDTO(String singerName, int IdSinger) {
         SingerName = singerName;
-        this.ID = ID;
+        this.IdSinger = IdSinger;
     }
 
     public String getSingerName() {
@@ -16,15 +16,15 @@ public class SingerDTO {
     }
 
     public int getID() {
-        return ID;
+        return IdSinger;
     }
 
     public void setSingerName(String singerName) {
         SingerName = singerName;
     }
 
-    public void setID(int ID) {
-        this.ID = ID;
+    public void setID(int IdSinger) {
+        this.IdSinger = IdSinger;
     }
 
     @Override
@@ -32,16 +32,16 @@ public class SingerDTO {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         SingerDTO singerDTO = (SingerDTO) o;
-        return ID == singerDTO.ID && Objects.equals(SingerName, singerDTO.SingerName);
+        return IdSinger == singerDTO.IdSinger && Objects.equals(SingerName, singerDTO.SingerName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(SingerName, ID);
+        return Objects.hash(SingerName, IdSinger);
     }
 
     @Override
     public String toString() {
-        return "Singers{" + ID + " : " + SingerName + "}";
+        return "Singers{" + IdSinger + " : " + SingerName + "}";
     }
 }
