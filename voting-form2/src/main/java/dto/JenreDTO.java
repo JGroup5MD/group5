@@ -3,8 +3,9 @@ package dto;
 import java.util.Objects;
 
 public class JenreDTO {
-    private String JenreName;
     private int IdJenre;
+    private String JenreName;
+
 
     public JenreDTO(int IdJenre,String jenreName) {
         this.IdJenre =IdJenre;

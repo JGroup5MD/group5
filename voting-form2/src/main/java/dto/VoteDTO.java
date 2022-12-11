@@ -6,13 +6,14 @@ import java.util.Objects;
 public class VoteDTO {
     private int IdSingers;
     private int[] IdJenres;
-    private  String information;
     private int IdInformation;
-    public  VoteDTO(int IdSingers, int[] IdJenres, String information,int IdInformation){
-        this.IdSingers=IdSingers;
-        this.IdJenres=IdJenres;
-        this.information=information;
-        this.IdInformation=IdInformation;
+    private  String information;
+
+    public VoteDTO(int idSingers, int[] idJenres, int idInformation, String information) {
+        this.IdSingers = idSingers;
+        this.IdJenres = idJenres;
+        this.IdInformation = idInformation;
+        this.information = information;
     }
 
     public int getIdSingers() {
@@ -65,10 +66,10 @@ public class VoteDTO {
     @Override
     public String toString() {
         return "VoteDTO{" +
-                "IdSingers:" + IdSingers +
-                ", IdJenres:" + Arrays.toString(IdJenres) +
-                ", information:'" + information + '\'' +
-                ", IdInformation:" + IdInformation +
+                "IdSingers: " + IdSingers +
+                ", IdJenres: " + Arrays.toString(IdJenres) +
+                ", IdInformation: " + IdInformation +
+                ", information: " + information + '\'' +
                 '}';
     }
 }

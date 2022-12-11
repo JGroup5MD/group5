@@ -1,11 +1,17 @@
-package dao;
+package dao.fabric;
+
+import dao.JenreDao;
+import dao.api.IJenreDao;
+import service.fabric.VoteServiceSingleton;
 
 public class JenreDaoSingleton {
     private volatile static JenreDao instance;
 
-    public static JenreDao getInstance(){
+    private JenreDaoSingleton() {
+    }
+    public static IJenreDao getInstance(){
         if(instance == null){
-            synchronized (JenreDaoSingleton.class){
+            synchronized (VoteServiceSingleton.class){
                 if(instance == null){
                     instance = new JenreDao();
                 }
@@ -13,5 +19,4 @@ public class JenreDaoSingleton {
         }
         return instance;
     }
-
 }

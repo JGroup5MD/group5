@@ -3,28 +3,28 @@ package dto;
 import java.util.Objects;
 
 public class SingerDTO {
-    private String SingerName;
     private int IdSinger;
+    private String SingerName;
 
-    public SingerDTO(String singerName, int IdSinger) {
+    public SingerDTO(int idSinger, String singerName) {
+        IdSinger = idSinger;
         SingerName = singerName;
-        this.IdSinger = IdSinger;
+    }
+
+    public int getIdSinger() {
+        return IdSinger;
+    }
+
+    public void setIdSinger(int idSinger) {
+        IdSinger = idSinger;
     }
 
     public String getSingerName() {
         return SingerName;
     }
 
-    public int getID() {
-        return IdSinger;
-    }
-
     public void setSingerName(String singerName) {
         SingerName = singerName;
-    }
-
-    public void setID(int IdSinger) {
-        this.IdSinger = IdSinger;
     }
 
     @Override
@@ -37,11 +37,14 @@ public class SingerDTO {
 
     @Override
     public int hashCode() {
-        return Objects.hash(SingerName, IdSinger);
+        return Objects.hash(IdSinger, SingerName);
     }
 
     @Override
     public String toString() {
-        return "Singers{" + IdSinger + " : " + SingerName + "}";
+        return "SingerDTO{" +
+                "IdSinger: " + IdSinger +
+                ", SingerName: " + SingerName + '\'' +
+                '}';
     }
 }

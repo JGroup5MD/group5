@@ -1,4 +1,4 @@
-package service.fabrics;
+package service.fabric;
 
 public class StatisticServiceSingleton {
 }
