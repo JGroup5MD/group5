@@ -11,6 +11,10 @@ public class SaveInformationDTO {
         this.ldtInit = ldtInit;
         this.vote = vote;
     }
+    public SaveInformationDTO(VoteDTO vote){
+        this.ldtInit = LocalDateTime.now();
+        this.vote = vote;
+    }
 
     public LocalDateTime getLdtInit() {
         return ldtInit;
