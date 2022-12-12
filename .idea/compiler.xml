@@ -12,7 +12,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="voting-form" target="11" />
-      <module name="voting-form2" target="18" />
+      <module name="voting-form2" target="11" />
     </bytecodeTargetLevel>
   </component>
 </project>

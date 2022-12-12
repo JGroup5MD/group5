@@ -40,11 +40,4 @@ public class SingerDTO {
         return Objects.hash(IdSinger, SingerName);
     }
 
-    @Override
-    public String toString() {
-        return "SingerDTO{" +
-                "IdSinger: " + IdSinger +
-                ", SingerName: " + SingerName + '\'' +
-                '}';
-    }
 }
