@@ -14,8 +14,17 @@ public class SingerService implements ISingerService {
     }
 
     @Override
-    public List<SingerDTO> get() {
+    public List<SingerDTO> get() { return dao.get();
+    }
 
-        return dao.get();
+    @Override
+    public boolean exist(String singerName) {
+        if(singerName==null||singerName.isBlank()){
+            throw new IllegalArgumentException("вы не выбрали артиста");
+        }
+        if (singerName.equals(1-9)){
+            throw  new IllegalArgumentException("вы ввели имя артиста которого нет в списке");
+        }
+        return this.exist(singerName);
     }
 }

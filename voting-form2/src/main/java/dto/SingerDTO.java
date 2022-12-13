@@ -19,7 +19,7 @@ public class SingerDTO {
         IdSinger = idSinger;
     }
 
-    public String getSingerName() {
+    public  String getSingerName() {
         return SingerName;
     }
 

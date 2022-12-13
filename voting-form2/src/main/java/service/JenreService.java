@@ -19,7 +19,7 @@ public class JenreService implements IJenreService {
     }
 
     @Override
-    public boolean exist(String jenreName) {
+    public boolean  exist(String jenreName) {
         if(jenreName == null||jenreName.isBlank()){
             throw new IllegalArgumentException("Вы не выбрали жанр");
         }
