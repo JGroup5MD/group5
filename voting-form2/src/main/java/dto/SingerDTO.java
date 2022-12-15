@@ -7,24 +7,16 @@ public class SingerDTO {
     private String SingerName;
 
     public SingerDTO(int idSinger, String singerName) {
-        IdSinger = idSinger;
-        SingerName = singerName;
+        this.IdSinger = idSinger;
+        this.SingerName = singerName;
     }
 
     public int getIdSinger() {
         return IdSinger;
     }
 
-    public void setIdSinger(int idSinger) {
-        IdSinger = idSinger;
-    }
-
     public  String getSingerName() {
         return SingerName;
-    }
-
-    public void setSingerName(String singerName) {
-        SingerName = singerName;
     }
 
     @Override
@@ -40,4 +32,11 @@ public class SingerDTO {
         return Objects.hash(IdSinger, SingerName);
     }
 
+    @Override
+    public String toString() {
+        return "SingerDTO{" +
+                "IdSinger:" + IdSinger +
+                ", SingerNam: " + SingerName + '\'' +
+                '}';
+    }
 }

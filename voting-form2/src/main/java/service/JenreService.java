@@ -19,10 +19,16 @@ public class JenreService implements IJenreService {
     }
 
     @Override
-    public boolean  exist(String jenreName) {
-        if(jenreName == null||jenreName.isBlank()){
-            throw new IllegalArgumentException("Вы не выбрали жанр");
+    public boolean  exist(int Idjenre) {
+        List <JenreDTO> jenreDTOS=this.dao.get();
+        for (JenreDTO jenreDTO : jenreDTOS) {
+            if(Idjenre==jenreDTO.getIdJenre()){
+                return true;
+            }
+            if(Character.isDigit(Idjenre)){
+                return true;
+            }
         }
-        return this.dao.exist(jenreName);
+        return false;
     }
 }

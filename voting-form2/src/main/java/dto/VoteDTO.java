@@ -1,123 +1,82 @@
 package dto;
 
 import java.util.Arrays;
-import java.util.Map;
 import java.util.Objects;
 
 public class VoteDTO {
-//    private int IdSingers;
-//    private  String Singers;
-    private Map<Integer, String>MapSinger;
-    private Map<Integer, String> MapJenres;
-//    private int[] IdJenres;
-    private  String information;
+    private int Singers;
+    private int[] Jenres;
+    private  String Information;
 
-//    public VoteDTO(int idSingers, int[] idJenres, String information) {
-//        this.IdSingers = idSingers;
-//        this.IdJenres = idJenres;
-//        this.information = information;
-//    }
-//
-//    public int getIdSingers() {
-//        return IdSingers;
-//    }
-//
-//    public void setIdSingers(int idSingers) {
-//        IdSingers = idSingers;
-//    }
-//
-//    public int[] getIdJenres() {
-//        return IdJenres;
-//    }
-//
-//    public void setIdJenres(int[] idJenres) {
-//        IdJenres = idJenres;
-//    }
-//
-//    public String getInformation() {
-//        return information;
-//    }
-//
-//    public void setInformation(String information) {
-//        this.information = information;
-//    }
-//
-//
-//    @Override
-//    public boolean equals(Object o) {
-//        if (this == o) return true;
-//        if (o == null || getClass() != o.getClass()) return false;
-//        VoteDTO voteDTO = (VoteDTO) o;
-//        return IdSingers == voteDTO.IdSingers && Arrays.equals(IdJenres, voteDTO.IdJenres) && Objects.equals(information, voteDTO.information);
-//    }
-//
-//    @Override
-//    public int hashCode() {
-//        int result = Objects.hash(IdSingers, information);
-//        result = 31 * result + Arrays.hashCode(IdJenres);
-//        return result;
-//    }
-//
-//    @Override
-//    public String toString() {
-//        return "VoteDTO{" +
-//                "IdSingers: " + IdSingers +
-//                ", IdJenres: " + Arrays.toString(IdJenres) +
-//                ", information: " + information + '\'' +
-//                '}';
-//    }
-
-
-    public VoteDTO(Map<Integer, String> mapSinger, Map<Integer, String> mapJenres, String information) {
-        MapSinger = mapSinger;
-        MapJenres = mapJenres;
-        this.information = information;
+    public VoteDTO(int idSingers, int[] idJenres, String Information) {
+        this.Singers = idSingers;
+        this.Jenres = idJenres;
+        this.Information = Information;
     }
-
-    public Map<Integer, String> getMapSinger() {
-        return MapSinger;
+    public int getSingers() {
+        return Singers;
     }
-
-    public void setMapSinger(Map<Integer, String> mapSinger) {
-        MapSinger = mapSinger;
-    }
-
-    public Map<Integer, String> getMapJenres() {
-        return MapJenres;
-    }
-
-    public void setMapJenres(Map<Integer, String> mapJenres) {
-        MapJenres = mapJenres;
+    public int[] getJenres() {
+        return Jenres;
     }
 
     public String getInformation() {
-        return information;
+        return Information;
     }
-
-    public void setInformation(String information) {
-        this.information = information;
-    }
-
     @Override
     public boolean equals(Object o) {
-
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         VoteDTO voteDTO = (VoteDTO) o;
-        return Objects.equals(MapSinger, voteDTO.MapSinger) && Objects.equals(MapJenres, voteDTO.MapJenres) && Objects.equals(information, voteDTO.information);
+        return Singers == voteDTO.Singers && Arrays.equals(Jenres, voteDTO.Jenres) && Objects.equals(Information, voteDTO.Information);
     }
-
     @Override
     public int hashCode() {
-        return Objects.hash(MapSinger, MapJenres, information);
+        int result = Objects.hash(Singers, Information);
+        result = 31 * result + Arrays.hashCode(Jenres);
+        return result;
     }
-
     @Override
     public String toString() {
         return "VoteDTO{" +
-                "MapSinger: " + MapSinger +
-                ", MapJenres: =" + MapJenres +
-                ", information: '" + information + '\'' +
+                "Singers: " + Singers +
+                ", Jenres: " + Arrays.toString(Jenres) +
+                ", Information: ='" + Information + '\'' +
                 '}';
     }
+    public static class VoteDTOBuilder{
+        private  int Singers;
+        private int[] Jenres=new int[0];
+        private  String Information;
+        private VoteDTOBuilder(){
+        }
+        public static VoteDTOBuilder init(){
+            return new VoteDTOBuilder();
+        }
+
+        public VoteDTOBuilder setSingers(int singers) {
+            this.Singers = singers;
+            return this;
+        }
+
+        public VoteDTOBuilder setJenres(int[] jenres) {
+            this.Jenres = jenres;
+            return this;
+        }
+        public VoteDTOBuilder addJenres(int  jenres){
+            this.Jenres=Arrays.copyOf(this.Jenres, this.Jenres.length+1);
+            this.Jenres[this.Jenres.length-1]=jenres;
+            return this;
+        }
+
+        public VoteDTOBuilder setInformation(String Information) {
+            this.Information = Information;
+            return this;
+        }
+
+        public VoteDTO build(){
+            return new VoteDTO(Singers,Jenres,Information);
+        }
+    }
+
 }

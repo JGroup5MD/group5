@@ -16,17 +16,8 @@ public class JenreDTO {
         return JenreName;
     }
 
-    public void setJenreName(String jenreName) {
-        JenreName = jenreName;
-    }
-
     public int getIdJenre() {
         return IdJenre;
-    }
-
-    public void setIdJenre(int IdJenre
-    ) {
-        this.IdJenre = IdJenre;
     }
 
     @Override

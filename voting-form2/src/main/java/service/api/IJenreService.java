@@ -6,6 +6,6 @@ import java.util.List;
 
 public interface IJenreService {
     List<JenreDTO>  get();
-    boolean exist(String jenreName );
+    boolean exist(int Idjenre);
 }
 

@@ -14,17 +14,28 @@ public class SingerService implements ISingerService {
     }
 
     @Override
-    public List<SingerDTO> get() { return dao.get();
+    public List<SingerDTO> get(int IdSinger) {
+        List <SingerDTO> singerDTOS=this.dao.get();
+        for (SingerDTO singerDTO : singerDTOS) {
+            if(IdSinger==singerDTO.getIdSinger()){
+                return singerDTOS;
+            }
+        }
+        return null;
     }
 
     @Override
-    public boolean exist(String singerName) {
-        if(singerName==null||singerName.isBlank()){
-            throw new IllegalArgumentException("вы не выбрали артиста");
-        }
-        if (singerName.equals(1-9)){
-            throw  new IllegalArgumentException("вы ввели имя артиста которого нет в списке");
-        }
-        return this.exist(singerName);
+    public boolean exist(int Idsinger) {
+       List <SingerDTO> singerDTOS=this.dao.get();
+       for (SingerDTO singerDTO : singerDTOS) {
+           if(Idsinger==singerDTO.getIdSinger()){
+               return true;
+           }
+           if(Character.isDigit(Idsinger)){
+               return true;
+           }
+       }
+            return false;
     }
 }
+

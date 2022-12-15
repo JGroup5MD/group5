@@ -25,10 +25,10 @@ public class SingerServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setCharacterEncoding("UTF-8");
         resp.setContentType("txt/html; charset=UTF-8");
-        List <SingerDTO> singerDTOS=singerService.get();
+        List <SingerDTO> singerDTOS=singerService.get(0);
         PrintWriter writer =resp.getWriter();
         for ( SingerDTO singerDTO:singerDTOS) {
-            writer.write("<p>" + singerDTO +  "</p>");
+            writer.write("<p>" +singerDTO.getIdSinger()+" : "+ singerDTO.getSingerName() +  "</p>");
         }
     }
 }

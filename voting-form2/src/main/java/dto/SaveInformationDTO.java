@@ -20,19 +20,11 @@ public class SaveInformationDTO {
         return ldtInit;
     }
 
-    public void setLdtInit(LocalDateTime ldtInit) {
-        this.ldtInit = ldtInit;
-    }
-
     public VoteDTO getVote() {
         return vote;
     }
 
-    public void setVote(VoteDTO vote) {
-        this.vote = vote;
-    }
-
-    @Override
+       @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
