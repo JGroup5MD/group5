@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/group5-main.iml" filepath="$PROJECT_DIR$/.idea/group5-main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/voting-form/voting-form.iml" filepath="$PROJECT_DIR$/voting-form/voting-form.iml" />
       <module fileurl="file://$PROJECT_DIR$/voting-form2/voting-form2.iml" filepath="$PROJECT_DIR$/voting-form2/voting-form2.iml" />
     </modules>
   </component>
