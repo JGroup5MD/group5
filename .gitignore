@@ -1,4 +1,12 @@
-.idea
-/target
-/voiting-form2
+### IntelliJ IDEA ###
+.idea/
+.idea/modules.xml
+.idea/jarRepositories.xml
+.idea/compiler.xml
+.idea/libraries/
+*.iws
 *.iml
+*.ipr
+target/
+out/
+*.class
