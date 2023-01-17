@@ -1,0 +1,7 @@
+dataSource.username=group_5
+dataSource.password=g5r5o5u5p
+dataSource.drivenClassName=org.postgresql.Driver
+dataSource.url="jdbc:postgresql://localhost:5432/voiting"
+dataSource.maxIdle=10
+dataSource.maxTotal=20
+dataSource.maxWaitMillis=-1
