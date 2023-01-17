@@ -8,6 +8,7 @@ import service.api.ISingerService;
 import service.api.IVoteService;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 public class VoteService implements IVoteService {
@@ -64,6 +65,10 @@ public class VoteService implements IVoteService {
         if(information.length()==1){
             throw new IllegalArgumentException("Введите больше информации о себе");
         }
+    }
+
+    public List<SaveInformationDTO> get() {
+        return this.dao.get();
     }
 }
 

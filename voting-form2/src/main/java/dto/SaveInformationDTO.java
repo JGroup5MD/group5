@@ -7,10 +7,7 @@ public class SaveInformationDTO {
     private LocalDateTime ldtInit;
     private VoteDTO vote;
 
-    public SaveInformationDTO(LocalDateTime ldtInit, VoteDTO vote) {
-        this.ldtInit = ldtInit;
-        this.vote = vote;
-    }
+
     public SaveInformationDTO(VoteDTO vote){
         this.ldtInit = LocalDateTime.now();
         this.vote = vote;
@@ -24,7 +21,15 @@ public class SaveInformationDTO {
         return vote;
     }
 
-       @Override
+    public void setLdtInit(LocalDateTime ldtInit) {
+        this.ldtInit = ldtInit;
+    }
+
+    public void setVote(VoteDTO vote) {
+        this.vote = vote;
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;

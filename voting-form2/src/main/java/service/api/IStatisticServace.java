@@ -1,9 +1,13 @@
 package service.api;
 
-import dto.StatisticDTO;
+import dto.*;
 
 import java.util.List;
+import java.util.Map;
 
 public interface IStatisticServace {
-    List<StatisticDTO> get();
+    public Map<List<SingerDTO>, Long> getTopGinger();
+    public  List<ResultTopJenres<JenreDTO>> getTopJAnre();
+    public List<InformationTop> getInformationTop();
+
 }
