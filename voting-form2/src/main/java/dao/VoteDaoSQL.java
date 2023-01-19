@@ -6,11 +6,9 @@ import dto.SaveInformationDTO;
 import java.util.ArrayList;
 import java.util.List;
 
-public class VoteDaoSQL implements IVoteDao {
-    private List<SaveInformationDTO>  svDTO = new ArrayList<>();
+public class VoteDaoSQL  {
 
-    @Override
-    public void save(SaveInformationDTO vote) {
-        this.svDTO.add(vote);
-    }
+
+   public void getVoite(){};
+    public void saveVoite(){};
 }

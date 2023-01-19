@@ -1,17 +1,21 @@
+import com.mchange.v2.c3p0.ComboPooledDataSource;
+
+import java.beans.PropertyVetoException;
 import java.sql.*;
 
 class Main1 {
     public static void main(String[] args) {
+        ComboPooledDataSource cpds = new ComboPooledDataSource();
         try {
-            Class.forName("org.postgresql.Driver");
-        } catch (ClassNotFoundException e) {
+            cpds.setDriverClass( "org.postgresql.Driver" ); //loads the jdbc driver
+        } catch (PropertyVetoException e) {
             throw new RuntimeException(e);
         }
+            cpds.setJdbcUrl( "jdbc:postgresql://localhost:5433/voting" );
+            cpds.setUser("postgres");
+            cpds.setPassword("postgres");
 
-        try(Connection conn = DriverManager.getConnection(
-                "jdbc:postgresql://localhost:5433/voting",
-                "postgres", "postgres");
-            Statement statement = conn.createStatement();
+
             ResultSet resultSet = statement.executeQuery("SELECT name, id FROM app.genres;");){
             while (resultSet.next()){
                 Long id = resultSet.getLong("id");

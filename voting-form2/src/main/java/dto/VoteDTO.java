@@ -48,6 +48,23 @@ public class VoteDTO {
         private  int Singers;
         private int[] Jenres=new int[0];
         private  String Information;
+        private String mail;
+
+        public VoteDTOBuilder(int singers, int[] jenres, String information, String mail) {
+            Singers = singers;
+            Jenres = jenres;
+            Information = information;
+            this.mail = mail;
+        }
+
+        public String getMail() {
+            return mail;
+        }
+
+        public void setMail(String mail) {
+            this.mail = mail;
+        }
+
         private VoteDTOBuilder(){
         }
         public static VoteDTOBuilder init(){
