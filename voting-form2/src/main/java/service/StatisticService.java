@@ -1,10 +1,13 @@
-package service.fabric;
+package service;
 
 import dto.*;
 import service.api.IJenreService;
 import service.api.ISingerService;
 import service.api.IStatisticServace;
 import service.api.IVoteService;
+import service.fabric.JenreServiceSingleton;
+import service.fabric.SingerServiceSingleton;
+import service.fabric.VoteServiceSingleton;
 
 import java.util.Comparator;
 import java.util.List;
@@ -18,9 +21,9 @@ public class StatisticService  implements IStatisticServace {
     private final IVoteService ivs;
 
     public StatisticService(ISingerService iss, IJenreService ijs, IVoteService ivs) {
-        this.iss = iss;
-        this.ijs = ijs;
-        this.ivs = ivs;
+        this.iss = SingerServiceSingleton.getInstance();
+        this.ijs = JenreServiceSingleton.getInstance();
+        this.ivs = VoteServiceSingleton.getInstance();
     }
 
     public Map<List<SingerDTO>, Long> getTopGinger(){

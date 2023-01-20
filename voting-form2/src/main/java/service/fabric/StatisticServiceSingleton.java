@@ -1,7 +1,6 @@
 package service.fabric;
 
-import dao.fabric.VoteDaoSingleton;
-import service.VoteService;
+import service.StatisticService;
 import service.api.IStatisticServace;
 
 public class StatisticServiceSingleton {
